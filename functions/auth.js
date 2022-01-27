@@ -1,7 +1,7 @@
 // Auth test endpoint, to be removed outside of testing
 
 exports.handler = async function (event, context) {
-    if(!process.env.DETA_PROJECT || process.env.DETA_PROJECT.length > 10){
+    if(!process.env.DETA_PROJECT || process.env.DETA_PROJECT.length < 10){
         return {
             statusCode: 403,
             body: "Endpoint disabled."
