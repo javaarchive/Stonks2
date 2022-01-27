@@ -9,6 +9,7 @@
 .netlify-identity-item{
     color: white;
     display: inline-block;
+    margin: 0.1em;
 }
 
 .netlify-identity-item > a{
