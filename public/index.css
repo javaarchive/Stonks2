@@ -3,10 +3,12 @@
     text-decoration: none;
     border-radius: 8px;
     padding: 0.5em;
+    list-style-type: none;
 }
 
 .netlify-identity-item{
     color: white;
+    display: inline-block;
 }
 
 .netlify-identity-item > a{
