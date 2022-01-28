@@ -42,7 +42,7 @@ docReady(() => {
         }
     });
 
-    fetchStocks = () => {
+    fetchStocks = async () => {
         fetch("/.netlify/functions/fetch_current_stocks", {
             method: "GET",
             headers: {
@@ -68,7 +68,7 @@ docReady(() => {
     fetchStocks();
 
     if(netlifyIdentity.currentUser()){
-        fetchUsers = () => {
+        fetchUsers = async () => {
             fetch("/.netlify/functions/fetch_users", {
                 method: "GET",
                 headers: {
