@@ -13,7 +13,14 @@ module.exports = {
         "IBM",
         "AMD",
         "AMC",
-        "INTC"
+        "INTC",
+        "SOFI",
+        "DJI",
+        "ETH",
+        "BNB",
+        "INX",
+        "INFO",
+        "BTC"
     ],
-    fetchIntervalLimit: 1000 * 60 * 5 - 5000 // slightly less than 5 minutes
+    fetchIntervalLimit: 1000 * 60 * 2 - 5000 // slightly less than 2 minutes
 }
