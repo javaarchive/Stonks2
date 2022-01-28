@@ -32,6 +32,8 @@ exports.handler = async function (event, context) {
     
     let body = JSON.parse(event["body"]);
 
+    body.quantity = parseInt(body.quantity);
+
     if(!body.ticker || !body.quantity || !body.action){
         return {
             statusCode: 400,

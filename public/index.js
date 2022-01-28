@@ -47,9 +47,15 @@ docReady(() => {
                 // Compose into a form
                 let data = {
                     action: app.action_type,
-                    quantity: app.action_quantity,
+                    quantity: parseInt(app.action_quantity),
                     ticker: app.action_ticker
                 };
+
+                if(quantity <= 0){
+                    alert("Quantity not positive! ");
+                    return;
+                }
+
                 let resp = await fetch("/.netlify/functions/perform_action",{
                     method: (app.action_type == "buy") ? "PUT":"DELETE",
                     headers: {
