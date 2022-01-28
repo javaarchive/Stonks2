@@ -8,6 +8,7 @@ exports.handler = async function (event, context) {
             body: "You need to be logged in."
         }
     }
+    user = await users.userify(context);
     
     return {
         statusCode: 200,
