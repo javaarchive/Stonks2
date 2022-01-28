@@ -29,4 +29,4 @@ class IdentityAPI {
     }
   }
 
-  module.exports = {identity: new IdentityAPI(process.env.URL)};
+  module.exports = {IdentityAPI};
