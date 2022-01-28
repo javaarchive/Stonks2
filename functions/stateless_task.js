@@ -27,7 +27,17 @@ exports.handler = async function (event, context) {
 
         let tickerToFetch = config.tickers[index];
 
+        let oldData = await db.stocks.get(tickerToFetch);
+
+        let changeFromLastTime = oldData.change || 0;
+
         let data = await yahooFinance.quote(tickerToFetch);
+
+        if(oldData){
+            if((data.regularMarketChange - oldData.price) > 0){
+                changeFromLastTime = (data.regularMarketChange - oldData.price); // if something changed indicate it
+            }
+        }
 
         await db.stocks.put({
             key: tickerToFetch,
@@ -40,7 +50,8 @@ exports.handler = async function (event, context) {
             exchange: data.exchange,
             longName: data.longName,
             quoteSource: data.quoteSourceName,
-            market: data.market
+            market: data.market,
+            change: changeFromLastTime
         });
 
         console.log(tickerToFetch,data);
