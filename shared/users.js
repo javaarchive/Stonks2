@@ -16,7 +16,7 @@ let self = {
             email: claims.email,
             from: claims.app_metadata.provider,
             avatar_url: claims.user_metadata.avatar_url,
-            full_name: claims.full_name,
+            full_name: claims.user_metadata.full_name,
             id: claims.sub,
             key: claims.sub
         }
