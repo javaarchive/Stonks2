@@ -27,6 +27,8 @@ exports.handler = async function (event, context) {
     }
 
     user = await users.userify(context);
+
+    console.log("User Data",user);
     
     let body = JSON.parse(event["body"]);
 
