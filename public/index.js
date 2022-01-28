@@ -51,6 +51,7 @@ docReady(() => {
                 resp.json().then(data => {
                     app.stocks = data.map(rawData => {
                         rawData.updatedTimeFormatted = (new Date(rawData.date)).toLocaleTimeString();
+                        return rawData;
                     }); // update!
                 });
             }else{
