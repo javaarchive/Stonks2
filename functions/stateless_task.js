@@ -29,7 +29,8 @@ exports.handler = async function (event, context) {
 
         let oldData = await db.stocks.get(tickerToFetch);
 
-        let changeFromLastTime = oldData.change || 0;
+        let changeFromLastTime = 0;
+        if(oldData && oldData.change) changeFromLastTime = oldData.change;
 
         let data = await yahooFinance.quote(tickerToFetch);
 
@@ -63,6 +64,7 @@ exports.handler = async function (event, context) {
         });
 
     }catch(ex){
+        console.warn(ex);
         return {
             statusCode: 500,
             body: JSON.stringify({ ok: false })
