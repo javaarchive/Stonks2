@@ -49,10 +49,10 @@ exports.handler = async function (event, context) {
     let change = stock.price * body.quantity;
 
     if(body.action == "buy"){
-        if(user.balance < change){
+        if(user.money < change){
             return {
                 statusCode: 400,
-                body: "You do not have enough money to buy this stock. Need " + change + " but only have " + user.balance + " :( "
+                body: "You do not have enough money to buy this stock. Need " + change + " but only have " + user.money + " :( "
             }
         }
         user.money -= change;
