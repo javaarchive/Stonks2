@@ -1,5 +1,15 @@
+// Identity Code
+
+// Main Code
+
 docReady(() => {
     let root = document.getElementById("root");
-    root.innerHTML = ""; // clear
+    
+    let app = new Vue({
+    el: '#root',
+        data: {
+            
+        }
+    })
     
 });
