@@ -58,11 +58,25 @@
                     </tr>
                 </tbody>
             </table>
-            <button v-if="lb" v-on:click="updateUsers">Reload Leaderboard</button>
+            <button v-if="loggedIn" v-on:click="updateUsers">Reload Leaderboard</button>
             <p>
                 Leaderboard is private to logged in users only by default.
             </p>
-            <h2>Action Form</h2>
+            <div v-if="loggedIn">
+                <h2>Action Form</h2>
+                <form v-on:submit.prevent="stockAction">
+                    <label for="symbol">Buy or Sell:</label>
+                    <select id="symbol" v-model="action_type">
+                        <option value="buy">Buy</option>
+                        <option value="sell">Sell</option>
+                    </select>
+                    <label for="symbol">Symbol:</label>
+                    <select v-for="stock in stocks" v-model="action_ticker">
+                        <option value="{{ stock.symbol }}">{{ stock.longName }} ({{ stock.symbol }})</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
         <div id="netlify-integeration">
             <div data-netlify-identity-menu></div>
