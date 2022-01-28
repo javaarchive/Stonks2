@@ -27,6 +27,8 @@ exports.handler = async function (event, context) {
 
         let tickerToFetch = config.tickers[index];
 
+        console.log("Update Task:",tickerToFetch);
+
         let oldData = await db.stocks.get(tickerToFetch);
 
         let changeFromLastTime = 0;
