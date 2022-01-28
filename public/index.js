@@ -35,7 +35,10 @@ docReady(() => {
             lb:[
 
             ],
-            loggedIn: isLoggedIn
+            loggedIn: isLoggedIn,
+            action_type: "buy",
+            action_ticker: "GOOGL",
+            action_quantity: 1
         },methods: {
             updateStocks: () => fetchStocks(),
             updateUsers: () => fetchUsers()
