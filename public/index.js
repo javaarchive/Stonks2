@@ -38,7 +38,7 @@ docReady(() => {
         console.log("Initial Stock Fetched Finished");
         if(resp.status == 200){
             resp.json().then(data => {
-                app.stocks = data.items; // update!
+                app.stocks = data; // update!
             });
         }else{
             resp.text().then(text => {
