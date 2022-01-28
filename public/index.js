@@ -31,6 +31,9 @@ docReady(() => {
             stocks: [
 
             ],
+            lb:[
+
+            ],
             loggedIn: isLoggedIn
         },methods: {
             updateStocks: () => fetchStocks()
@@ -46,7 +49,9 @@ docReady(() => {
         }).then(resp => {
             if(resp.status == 200){
                 resp.json().then(data => {
-                    app.stocks = data; // update!
+                    app.stocks = data.map(rawData => {
+                        rawData.updatedTimeFormatted = (new Date(rawData.date)).toLocaleTimeString();
+                    }); // update!
                 });
             }else{
                 resp.text().then(text => {
