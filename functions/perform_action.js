@@ -52,7 +52,7 @@ exports.handler = async function (event, context) {
         if(user.balance < change){
             return {
                 statusCode: 400,
-                body: "You do not have enough money to buy this stock. "
+                body: "You do not have enough money to buy this stock. Need " + change + " but only have " + user.balance + " :( "
             }
         }
         user.money -= change;
@@ -70,7 +70,7 @@ exports.handler = async function (event, context) {
         if(userStock.quantity < body.quantity){
             return {
                 statusCode: 400,
-                body: "You do not own enough of this stock to sell for your requested amount. "
+                body: "You do not own enough of this stock to sell for your requested amount. You currently have " + userStock.quantity + " of it. "
             }
         }
         user.money += change;
