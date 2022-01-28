@@ -22,6 +22,7 @@ let self = {
         }
     },
     putUser: (user) => {
+        user.money = Math.trunc(100 * user.money)/100;
         return db.users.put(user);
     },
     getUser: (id) => {
