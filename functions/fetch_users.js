@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
           body: "You need to be logged in to access data of other users. "
       }
   }
-  
+
   user = await users.userify(context);
 
   let items = (await db.users.fetch())["items"];
@@ -25,8 +25,8 @@ exports.handler = async function (event, context) {
       statusCode: 200,
       body: JSON.stringify(filteredItems),
       headers:{
-        "cache-control": "public, max-age=60",
-        "age": "10"
+       // "cache-control": "public, max-age=60",
+       // "age": "10"
       }
     };
   }
