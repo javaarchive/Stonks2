@@ -33,7 +33,7 @@ let self = {
         }
         return resp.items[0];   
     },userify: async (context) => {
-        let userBasic = self.processContext(id);
+        let userBasic = self.processContext(context);
         let userFetched = await self.getUser(userBasic.key);
         if(!userFetched){
             // create an account
