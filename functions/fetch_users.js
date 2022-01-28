@@ -6,6 +6,7 @@ exports.handler = async function (event, context) {
   let filteredItems = items.map(user => {
     delete user.email;
     delete user.key;
+    return user;
   });
 
   return {
