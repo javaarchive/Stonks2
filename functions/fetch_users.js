@@ -14,12 +14,12 @@ exports.handler = async function (event, context) {
 
   let items = (await db.users.fetch())["items"];
 
-  let filteredItems = items.map(user => {
+  let filteredItems = Array.from(items.map(user => {
     delete user.email;
     delete user.key;
     delete user.from;
     return user;
-  });
+  })).sort((a, b) => (a.money > b.money ? -1 : 1));
 
   return {
       statusCode: 200,
