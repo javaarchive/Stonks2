@@ -18,8 +18,25 @@
             </p>
         </noscript>
         <div id="root">
-            <h1>Loading</h1>
-            <p>Please wait...</p>
+            <h1>Stocks!</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="stock in stocks">
+                        <td>{{ stock.symbol }}</td>
+                        <td>{{ stock.shortName }}</td>
+                        <td>{{ stock.price }}</td>
+                        <td>{{ stock.change }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div id="netlify-integeration">
             <div data-netlify-identity-menu></div>
