@@ -69,6 +69,14 @@ docReady(() => {
         }
     });
 
+    netlifyIdentity.on('login', () => {
+        app.loggedIn = true;
+    });
+
+    netlifyIdentity.on('logout', () => {
+        app.loggedIn = false;
+    });
+
     fetchStocks = async () => {
         fetch("/.netlify/functions/fetch_current_stocks", {
             method: "GET",
