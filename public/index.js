@@ -46,7 +46,7 @@ docReady(() => {
         fetch("/.netlify/functions/fetch_current_stocks", {
             method: "GET",
             headers: {
-                ...identity.genAuthHeader()
+                ...(await identity.genAuthHeader())
             }
         }).then(resp => {
             if(resp.status == 200){
@@ -72,7 +72,7 @@ docReady(() => {
             fetch("/.netlify/functions/fetch_users", {
                 method: "GET",
                 headers: {
-                    ...identity.genAuthHeader()
+                    ...(await identity.genAuthHeader())
                 }
             }).then(resp => {
                 if(resp.status == 200){
@@ -86,6 +86,8 @@ docReady(() => {
                 }
             })
         }
+
+        console.log("Launching Initial Leaderboard fetch");
         fetchUsers();
     }
     
