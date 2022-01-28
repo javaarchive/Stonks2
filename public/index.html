@@ -64,6 +64,7 @@
             </p>
             <div v-if="loggedIn">
                 <h2>Action Form</h2>
+                <span v-if="successfulAction">Action Performed Successfully</span> <br />
                 <form v-on:submit.prevent="stockAction">
                      <label for="ticker">Symbol:</label>
                     <select v-model="action_ticker">

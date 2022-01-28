@@ -38,10 +38,34 @@ docReady(() => {
             loggedIn: isLoggedIn,
             action_type: "buy",
             action_ticker: "GOOGL",
-            action_quantity: 1
+            action_quantity: 1,
+            successfulAction: false
         },methods: {
             updateStocks: () => fetchStocks(),
-            updateUsers: () => fetchUsers()
+            updateUsers: () => fetchUsers(),
+            stockAction: async () => {
+                // Compose into a form
+                let data = {
+                    action: app.action_type,
+                    quantity: app.action_quantity,
+                    ticker: app.action_ticker
+                };
+                let resp = await fetch("/.netlify/functions/perform_action",{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        ...(await identity.genAuthHeader())
+                    },
+                    body: JSON.stringify(data)
+                });
+                if(resp.status == 200){
+                    app.successfulAction = true;
+                    fetchUsers();
+                }else{
+                    app.successfulAction = false;
+                    alert("Server Error: " + (await resp.text()));
+                }
+            }
         }
     });
 
