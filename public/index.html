@@ -71,8 +71,8 @@
                         <option value="sell">Sell</option>
                     </select>
                     <label for="ticker">Symbol:</label>
-                    <select v-for="stock in stocks" v-model="action_ticker">
-                        <option value="{{ stock.symbol }}">{{ stock.longName }} ({{ stock.symbol }})</option>
+                    <select v-model="action_ticker">
+                        <option v-for="stock in stocks" value="{{ stock.symbol }}">{{ stock.longName }} ({{ stock.symbol }})</option>
                     </select>
                     <label for="quantity">Quantity: </label>
                     <input type="number" id="quantity" v-model="action_quantity" />
