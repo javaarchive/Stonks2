@@ -1,4 +1,5 @@
 const db = require("../shared/db");
+const users = require("../shared/users");
 
 exports.handler = async function (event, context) {
   let user = users.processContext(context);
