@@ -23,7 +23,8 @@ docReady(() => {
 
     let root = document.getElementById("root");
 
-    let fetchStocks;
+    let fetchStocks = () => {};
+    let fetchUsers = () => {};
 
     let app = new Vue({
     el: '#root',
@@ -36,7 +37,8 @@ docReady(() => {
             ],
             loggedIn: isLoggedIn
         },methods: {
-            updateStocks: () => fetchStocks()
+            updateStocks: () => fetchStocks(),
+            updateUsers: () => fetchUsers()
         }
     });
 
@@ -64,5 +66,27 @@ docReady(() => {
 
     console.log("Launching Initial Stock Fetch");
     fetchStocks();
+
+    if(netlifyIdentity.currentUser()){
+        fetchUsers = () => {
+            fetch("/.netlify/functions/fetch_users", {
+                method: "GET",
+                headers: {
+                    ...identity.genAuthHeader()
+                }
+            }).then(resp => {
+                if(resp.status == 200){
+                    resp.json().then(data => {
+                        app.lb = data;
+                    });
+                }else{
+                    resp.text().then(text => {
+                        alert("Server gave an error for you: " + text);
+                    })
+                }
+            })
+        }
+        fetchUsers();
+    }
     
 });
