@@ -27,6 +27,7 @@ docReady(() => {
         }
     });
 
+    console.log("Launching Initial Stock Fetch");
     fetch("/.netlify/functions/fetch_current_stocks", {
         method: "GET",
         headers: {
@@ -34,6 +35,7 @@ docReady(() => {
             ...identity.genAuthHeader()
         }
     }).then(resp => {
+        console.log("Initial Stock Fetched Finished");
         if(resp.status == 200){
             resp.json().then(data => {
                 app.stocks = data.items; // update!
