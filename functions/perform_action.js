@@ -55,7 +55,8 @@ exports.handler = async function (event, context) {
                 body: "You do not have enough money to buy this stock. "
             }
         }
-        user.balance -= change;
+        user.money -= change;
+        user.stocks += body.quantity;
         let key = user.id + ":" + body.ticker;
         let userStock = (await db.stock_ownerships.get(key)) || {key, user: user.id, ticker: body.ticker, quantity: 0};
         if(userStock){
@@ -72,10 +73,16 @@ exports.handler = async function (event, context) {
                 body: "You do not own enough of this stock to sell for your requested amount. "
             }
         }
-        user.balance += change;
+        user.money += change;
+        user.stocks -= body.quantity;
         userStock.quantity -= body.quantity;
         await db.stock_ownerships.put(userStock);
         await users.putUser(user);
+    }else{
+        return {
+            statusCode: 400,
+            body: "Invalid action. "
+        }
     }
 
     return {
