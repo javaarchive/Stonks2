@@ -38,7 +38,7 @@ let self = {
         if(!userFetched){
             // create an account
             await self.putUser({...config.defaultUserData,...userBasic});
-            return userBasic;
+            return {...config.defaultUserData,...userBasic};
         }else{
             let userUpdated = {...config.defaultUserData,...userFetched,...userBasic};
             await self.putUser(userUpdated);
