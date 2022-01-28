@@ -19,6 +19,7 @@
         </noscript>
         <div id="root">
             <h1>Stocks!</h1>
+            <h2>Prices</h2>
             <table>
                 <thead>
                     <tr>
@@ -39,6 +40,24 @@
                     </tr>
                 </tbody>
             </table>
+            <h2>Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stocks Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="user in users">
+                        <td>{{ user.full_name }}</td>
+                        <td>{{ user.money }}</td>
+                        <td>{{ user.stock_count }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Action Form</h2>
         </div>
         <div id="netlify-integeration">
             <div data-netlify-identity-menu></div>
