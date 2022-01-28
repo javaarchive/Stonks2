@@ -6,9 +6,10 @@ exports.handler = async function (event, context) {
   if(!user){
       return {
           statusCode: 403,
-          body: "You need to be logged in to access data of other users"
+          body: "You need to be logged in to access data of other users. "
       }
   }
+  
   user = await users.userify(context);
 
   let items = (await db.users.fetch())["items"];
