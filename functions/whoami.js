@@ -5,7 +5,7 @@ exports.handler = async function (event, context) {
     return {
         statusCode: 200,
         body: JSON.stringify({
-            identity, user, context.clientContext
+            identity, user, ctx: context.clientContext
         })
     }
 };
