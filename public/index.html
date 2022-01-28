@@ -40,6 +40,7 @@
                     </tr>
                 </tbody>
             </table>
+            <button v-on:click="updateStocks">Reload Leaderboard</button>
             <h2>Leaderboard</h2>
             <table>
                 <thead>
@@ -57,6 +58,7 @@
                     </tr>
                 </tbody>
             </table>
+            <button v-if="lb" v-on:click="updateUsers">Reload Leaderboard</button>
             <p>
                 Leaderboard is private to logged in users only by default.
             </p>
