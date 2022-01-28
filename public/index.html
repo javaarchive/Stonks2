@@ -66,12 +66,12 @@
                 <h2>Action Form</h2>
                 <form v-on:submit.prevent="stockAction">
                     <label for="symbol">Buy or Sell:</label>
-                    <select id="symbol" v-model="action_type">
+                    <select id="symbol" v-model="actiontype">
                         <option value="buy">Buy</option>
                         <option value="sell">Sell</option>
                     </select>
                     <label for="symbol">Symbol:</label>
-                    <select v-for="stock in stocks" v-model="action_ticker">
+                    <select v-for="stock in stocks" v-model="actionticker">
                         <option value="{{ stock.symbol }}">{{ stock.longName }} ({{ stock.symbol }})</option>
                     </select>
                     <button type="submit">Submit</button>
