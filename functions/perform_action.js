@@ -56,7 +56,7 @@ exports.handler = async function (event, context) {
             }
         }
         user.money -= change;
-        user.stocks += body.quantity;
+        user.stockCount += body.quantity;
         let key = user.id + ":" + body.ticker;
         let userStock = (await db.stock_ownerships.get(key)) || {key, user: user.id, ticker: body.ticker, quantity: 0};
         if(userStock){
@@ -74,7 +74,7 @@ exports.handler = async function (event, context) {
             }
         }
         user.money += change;
-        user.stocks -= body.quantity;
+        user.stockCount -= body.quantity;
         userStock.quantity -= body.quantity;
         await db.stock_ownerships.put(userStock);
         await users.putUser(user);
