@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/javaarchive/Stonks2#readme",
   "dependencies": {
-    "deta": "^1.0.1"
+    "deta": "^1.0.1",
+    "yahoo-finance2": "^2.1.1"
   }
 }
