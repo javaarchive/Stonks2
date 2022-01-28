@@ -51,7 +51,7 @@ docReady(() => {
                     ticker: app.action_ticker
                 };
                 let resp = await fetch("/.netlify/functions/perform_action",{
-                    method: "POST",
+                    method: (app.action_type == "buy") ? "PUT":"DELETE",
                     headers: {
                         "Content-Type": "application/json",
                         ...(await identity.genAuthHeader())
