@@ -1,12 +1,13 @@
 // Identity Code
 
 let identity = {
-    genAuthHeader: () => {
+    genAuthHeader: async () => {
         if(!netlifyIdentity.currentUser()){
             return {};
         }
+        let jwt = await netlifyIdentity.currentUser().jwt();
         return {
-            "Authorization": `Bearer ${netlifyIdentity.currentUser().jwt()}`
+            "Authorization": `Bearer ${jwt}`
         }
     }
 }
