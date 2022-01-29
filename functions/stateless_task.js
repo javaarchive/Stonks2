@@ -37,8 +37,8 @@ exports.handler = async function (event, context) {
         let data = await yahooFinance.quote(tickerToFetch);
 
         if(oldData){
-            if((data.regularMarketChange - oldData.price) != 0){
-                changeFromLastTime = (data.regularMarketChange - oldData.price); // if something changed indicate it
+            if((data.regularMarketPrice - oldData.price) != 0){
+                changeFromLastTime = (data.regularMarketPrice - oldData.price); // if something changed indicate it
             }else{
                 // eh we're not intrested
                 return;
