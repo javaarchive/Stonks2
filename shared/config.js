@@ -13,7 +13,13 @@ module.exports = {
         "IBM",
         "AMD",
         "AMC",
-        "INTC"
+        "INTC",
+        "COST",
+        "CSCO",
+        "KO",
+        "PEP",
+        "ADBE",
+        "DIS"
     ],
     fetchIntervalLimit: 1000 * 60 * 2 - 5000, // slightly less than 2 minutes
     defaultUserData: {
