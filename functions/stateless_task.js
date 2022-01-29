@@ -35,30 +35,32 @@ exports.handler = async function (event, context) {
         if(oldData && oldData.change) changeFromLastTime = oldData.change;
 
         let data = await yahooFinance.quote(tickerToFetch);
+        let skipPut = false;
 
         if(oldData){
             if((data.regularMarketPrice - oldData.price) != 0){
                 changeFromLastTime = (data.regularMarketPrice - oldData.price); // if something changed indicate it
             }else{
                 // eh we're not intrested
-                return;
+                skipPut = true;
             }
         }
-
-        await db.stocks.put({
-            key: tickerToFetch,
-            price: data.regularMarketPrice,
-            date: Date.now(),
-            currency: data.currency,
-            name: data.displayName,
-            shortName: data.shortName,
-            symbol: data.symbol,
-            exchange: data.exchange,
-            longName: data.longName,
-            quoteSource: data.quoteSourceName,
-            market: data.market,
-            change: changeFromLastTime
-        });
+        if(!skipPut){
+            await db.stocks.put({
+                key: tickerToFetch,
+                price: data.regularMarketPrice,
+                date: Date.now(),
+                currency: data.currency,
+                name: data.displayName,
+                shortName: data.shortName,
+                symbol: data.symbol,
+                exchange: data.exchange,
+                longName: data.longName,
+                quoteSource: data.quoteSourceName,
+                market: data.market,
+                change: changeFromLastTime
+            });
+        }
 
         console.log(tickerToFetch,data);
 
