@@ -19,7 +19,12 @@ module.exports = {
         "KO",
         "PEP",
         "ADBE",
-        "DIS"
+        "DIS",
+        "NFLX",
+        "QCOM",
+        "COST",
+        "CRM",
+        "TXN"
     ],
     fetchIntervalLimit: 1000 * 60 * 2 - 5000, // slightly less than 2 minutes
     defaultUserData: {
