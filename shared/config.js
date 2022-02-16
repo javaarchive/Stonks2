@@ -28,7 +28,7 @@ module.exports = {
         "NET",
         "NTDOY"
     ],
-    fetchIntervalLimit: 1000 * 60 * 2 - 5000, // slightly less than 2 minutes
+    fetchIntervalLimit: 1000 * 60 * 1 - 5000, // slightly less than 1 minute (TURBO!)
     defaultUserData: {
         money: 1000.00
     }
