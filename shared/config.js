@@ -25,8 +25,7 @@ module.exports = {
         "COST",
         "CRM",
         "TXN",
-        "NET",
-        "NTDOY"
+        "NET"
     ],
     fetchIntervalLimit: 1000 * 60 * 1 - 5000, // slightly less than 1 minute (TURBO!)
     defaultUserData: {
