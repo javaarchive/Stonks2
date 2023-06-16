@@ -1,31 +1,36 @@
 module.exports = {
     tickers: [
-        "AAPL",
-        "MSFT",
-        "AMZN",
-        "GOOG",
-        "FB",
-        "TWTR",
-        "NFLX",
-        "TSLA",
-        "GME",
-        "NVDA",
-        "IBM",
-        "AMD",
-        "AMC",
+        "AAPL", // apple
+        "MSFT", // microsoft
+        "AMZN", // amazon
+        "GOOG", // google
+        "FB", // facebook
+        "TWTR", // twitter
+        "NFLX", // netflix
+        "TSLA", // tesla
+        "GME", // gamestop meme
+        "NVDA", // nvidia
+        "IBM", // ibm
+        "AMD", // amd
+        "AMC", // amc?
         "INTC",
-        "COST",
-        "CSCO",
+        "COST", // costco?
+        "CSCO", // cisco
         "KO",
         "PEP",
-        "ADBE",
-        "DIS",
-        "NFLX",
-        "QCOM",
-        "COST",
+        "ADBE", // adobe
+        "DIS", // disney
+        "NFLX", // netflix
+        "QCOM", // qualcomm
+        "COST", // costco?
         "CRM",
         "TXN",
-        "NET"
+        "NET",
+        "ATVI", // activision blizzard
+        "ARNB", // airbnb
+        "SMCI", // supermicro
+        "OPRA", // opera limited
+        "EBAY" // ebay  
     ],
     fetchIntervalLimit: 1000 * 60 * 1 - 5000, // slightly less than 1 minute (TURBO!)
     defaultUserData: {
