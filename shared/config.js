@@ -14,7 +14,6 @@ module.exports = {
         "AMD", // amd
         "AMC", // amc?
         "INTC", // intel
-        "COST", // costco?
         "CSCO", // cisco
         "KO", // coke
         "PEP", // pepsi?
