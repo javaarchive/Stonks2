@@ -16,7 +16,7 @@ module.exports = {
         "INTC", // intel
         "COST", // costco?
         "CSCO", // cisco
-        "KO",
+        "KO", // coke
         "PEP", // pepsi?
         "ADBE", // adobe
         "DIS", // disney
