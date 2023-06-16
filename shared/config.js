@@ -20,7 +20,6 @@ module.exports = {
         "PEP", // pepsi?
         "ADBE", // adobe
         "DIS", // disney
-        "NFLX", // netflix
         "QCOM", // qualcomm
         "COST", // costco?
         "CRM", // salesforce
