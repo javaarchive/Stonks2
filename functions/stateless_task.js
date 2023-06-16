@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
         if(lastState.lastStock){
             index = (config.tickers.indexOf(lastState.lastStock) + 1);
         }
-        if(lastState.lastFetch > 0 && (!skipCheck || ("bypass" in lastState && lastState["bypass"]))){
+        if(lastState.lastFetch > 0 && (!skipCheck || !("bypass" in lastState && lastState["bypass"]) ) ){
             if((Date.now() - lastState.lastFetch) < config.fetchIntervalLimit){
                 return {
                     statusCode: 200,
