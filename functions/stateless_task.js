@@ -68,7 +68,8 @@ exports.handler = async function (event, context) {
         await db.state.put({
             key: "task_state",
             lastStock: tickerToFetch,
-            lastFetch: Date.now()
+            lastFetch: Date.now(),
+            bypass: skipCheck ? true: false
         });
 
     }catch(ex){
