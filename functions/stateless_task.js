@@ -11,6 +11,7 @@ exports.handler = async function (event, context) {
         let index = 0;
         if(lastState.lastStock){
             index = (config.tickers.indexOf(lastState.lastStock) + 1);
+            console.log("We last updated",lastState.lastStock, " so now we are going to update ",index, " which is ", config.tickers[index % config.tickers.length]);
         }
         skipCheck = ("bypass" in lastState && lastState["bypass"] == true);
         if(lastState.lastFetch > 0 && !skipCheck){
@@ -22,8 +23,10 @@ exports.handler = async function (event, context) {
                 };
             }
         }
+        
         index = index % config.tickers.length; // Cycle if needed. 
-
+        console.log("Index",index, " of ",config.tickers.length, " total stocks");
+        
         // Fetch data
 
         let tickerToFetch = config.tickers[index];
