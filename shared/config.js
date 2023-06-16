@@ -13,24 +13,34 @@ module.exports = {
         "IBM", // ibm
         "AMD", // amd
         "AMC", // amc?
-        "INTC",
+        "INTC", // intel
         "COST", // costco?
         "CSCO", // cisco
         "KO",
-        "PEP",
+        "PEP", // pepsi?
         "ADBE", // adobe
         "DIS", // disney
         "NFLX", // netflix
         "QCOM", // qualcomm
         "COST", // costco?
-        "CRM",
-        "TXN",
-        "NET",
+        "CRM", // salesforce
+        "TXN", // texas instruments
+        "NET", // cloudflare
         "ATVI", // activision blizzard
         "ARNB", // airbnb
         "SMCI", // supermicro
         "OPRA", // opera limited
-        "EBAY" // ebay  
+        "EBAY", // ebay
+        "PYPL", // paypal
+        "PANW", // palo alto networks
+        "SBUX", // starbucks
+        "ZM", // ZOOM LMAO
+        "MU", // Micron technology inc
+        "CCL", // carnival cruise lines lolol
+        "BAC", // bank of america
+        "T", // AT&T
+        "U", // unity software inc
+        "ORCL" // oracle corp
     ],
     fetchIntervalLimit: 1000 * 60 * 1 - 5000, // slightly less than 1 minute (TURBO!)
     defaultUserData: {
