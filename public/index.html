@@ -42,7 +42,7 @@
             </table>
             <button v-on:click="updateStocks">Reload Stock List</button>
             <p>
-                Recent updates have made it so updated at now reflects the time when stock price change was detected.
+                Recent updates have made it so updated at now reflects the time when stock price change was detected. If you are a person that I know IRL and are wondering where your account data is, I have removed it temporarily for safety reasons.  
             </p>
             <h2>Leaderboard</h2>
             <table>
@@ -63,7 +63,8 @@
             </table>
             <button v-if="loggedIn" v-on:click="updateUsers">Reload Leaderboard</button>
             <p>
-                Leaderboard is private to logged in users only by default.
+                The leaderboard is private to logged in users only by default (TODO: disable this restriction). The buttons below can help you with account creation. Because this was a joke for a school project originally <strong>LOGGING IN WITH A THIRD PARTY PROVIDER (GITHUB OR GOOGLE) WILL MAKE YOUR LINKED FULL NAME SHOW ON THE LEADERBOARD</strong>. 
+If you accidentally do that you can email the admin at (smashjarchive at gmail dot com). Otherwise your selected username will display. 
             </p>
             <div v-if="loggedIn">
                 <h2>Action Form</h2>
