@@ -4,7 +4,7 @@ module.exports = {
         "MSFT", // microsoft
         "AMZN", // amazon
         "GOOG", // google
-        "FB", // facebook
+        "META", // meta cough facebook
         "TWTR", // twitter
         "NFLX", // netflix
         "TSLA", // tesla
