@@ -42,6 +42,8 @@ module.exports = {
     ],
     fetchIntervalLimit: 1000 * 60 * 1 - 5000, // slightly less than 1 minute (TURBO!)
     defaultUserData: {
-        money: 1000.00
+        // previously was 1000
+        // now 10k for the public reveal
+        money: 10000.69 // nice!
     }
 }
