@@ -25,7 +25,7 @@ module.exports = {
         "TXN", // texas instruments
         "NET", // cloudflare
         "ATVI", // activision blizzard
-        "ARNB", // airbnb
+        "ABNB", // airbnb
         "SMCI", // supermicro
         "OPRA", // opera limited
         "EBAY", // ebay
